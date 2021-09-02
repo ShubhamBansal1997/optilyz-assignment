@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - '16'
+services:
+  - mongodb
+cache: npm
+branches:
+  only:
+    - master
+env:
+  global:
+    - APP_PORT=5000
+    - DB_URI=mongodb://localhost:27017/task
+    - JWT_SECRET=thisisalongseccertkey
+script:
+  - npm run test:e2e

@@ -1,0 +1,32 @@
+version: '3'
+services:
+  optilyz-webapp:
+    build:
+      context: .
+      dockerfile: local.Dockerfile
+    container_name: 'optilyz-webapp'
+    volumes:
+      - .:/usr/src/app/
+    working_dir: /usr/src/app
+    environment:
+      - DB_URI=mongodb://optilyz-mongo:27017/optilyz_mongoose
+    command: sh -c "npm run dev"
+    ports:
+      - 5000:5000
+    networks:
+      - optilyz
+
+  optilyz-mongo:
+    image: "mongo:latest"
+    ports:
+      - "27020:27017"
+    expose:
+      - 27020
+    networks:
+      - optilyz
+
+networks:
+  optilyz:
+    driver: bridge
+
+
