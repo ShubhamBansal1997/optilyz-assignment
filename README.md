@@ -1,4 +1,6 @@
-# Task App 🙌
+# Task App 🙌 [![Build Status](https://app.travis-ci.com/ShubhamBansal1997/optilyz-assignment.svg?branch=master)](https://app.travis-ci.com/ShubhamBansal1997/optilyz-assignment)
+___
+
 
 # Contents
 
